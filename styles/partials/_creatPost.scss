@@ -1,0 +1,39 @@
+form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    fieldset{
+        border: none;
+        margin: 0px;
+        padding: 0px;
+    }
+    .postImgPreview{
+        width: 100%;
+    }
+    // postText
+    label{
+        visibility: hidden;
+        position: absolute;
+        top: 1000000;
+    }
+    .postText{
+        width: 60%;
+    }
+     .postBtns{
+        width: 40%;
+          display: flex;
+            flex-direction: row;
+            align-items: center;
+        button{
+            flex-grow:1;
+            padding: 0px;
+            margin: 0px;
+            border: none;
+            background: 0px;
+        }
+        .addImg img{
+            margin: 0 auto;
+            max-width: 40px;
+        }
+    }
+}

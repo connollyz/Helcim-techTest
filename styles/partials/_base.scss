@@ -1,0 +1,38 @@
+
+//fonts
+$primaryFont: 'Open Sans', Sans-Serif;
+$secondaryFont: 'Ubuntu', Sans-Serif;
+
+//colors
+$primaryColor: #4766F7;
+$secondaryColor: #3C9AFA;
+$tertiaryColor: #1F1C20;
+
+// base styles
+html{
+    font-size: 125%; 
+    padding: 0px; 
+    margin: 0px;
+    scroll-behavior: smooth;
+    .wrapper{
+        width: 90%;
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    img{
+        width: 100%;
+        display: block;
+    }
+    a{
+        text-decoration: none;
+    }
+    ul{
+        margin: 0px;
+        padding: 0px;
+        li{
+            list-style: none;
+        }
+    }
+}
+
+
