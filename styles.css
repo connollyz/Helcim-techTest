@@ -128,7 +128,9 @@ html {
   font-size: 125%;
   padding: 0px;
   margin: 0px;
-  scroll-behavior: smooth; }
+  scroll-behavior: smooth;
+  font-family: "Open Sans", Sans-Serif;
+  font-size: 0.875rem; }
   html .wrapper {
     width: 90%;
     max-width: 480px;
@@ -143,6 +145,104 @@ html {
     padding: 0px; }
     html ul li {
       list-style: none; }
+
+header {
+  background: -webkit-gradient(linear, left top, left bottom, from(#4766F7), to(#3C9AFA));
+  background: -webkit-linear-gradient(top, #4766F7, #3C9AFA);
+  background: -o-linear-gradient(top, #4766F7, #3C9AFA);
+  background: linear-gradient(to bottom, #4766F7, #3C9AFA);
+  border-radius: 0px 0px 25px 25px;
+  overflow: hidden; }
+  header .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+
+.navBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .navBar .hamburgerMenu {
+    width: 30px; }
+    .navBar .hamburgerMenu .bar {
+      margin: 4px 0px;
+      height: 4px;
+      width: 100%;
+      border-radius: 2px;
+      background-color: #F2F2F2;
+      position: relative;
+      -webkit-transition: all 0.3s;
+      -o-transition: all 0.3s;
+      transition: all 0.3s; }
+  .navBar .logo {
+    width: 80px; }
+  .navBar .user i {
+    color: #F2F2F2;
+    font-size: 1.5rem; }
+
+.menu {
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s; }
+  .menu ul li {
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .menu ul li a {
+      width: 100%;
+      color: #F2F2F2;
+      font-size: 1.2rem; }
+      .menu ul li a i {
+        margin-right: 20px; }
+      .menu ul li a .wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start; }
+    .menu ul li:hover {
+      background: rgba(242, 242, 242, 0.1); }
+  .menu .closeBar {
+    margin: 10px auto;
+    height: 4px;
+    width: 30px;
+    border-radius: 2px;
+    background-color: #F2F2F2; }
+
+.openDD {
+  visibility: hidden;
+  position: absolute;
+  top: 10000000; }
+
+#openDD:checked + .menu {
+  height: 320px; }
 
 form {
   display: -webkit-box;

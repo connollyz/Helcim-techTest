@@ -7,6 +7,26 @@ $secondaryFont: 'Ubuntu', Sans-Serif;
 $primaryColor: #4766F7;
 $secondaryColor: #3C9AFA;
 $tertiaryColor: #1F1C20;
+$quaternaryColor: #F2F2F2;
+
+// mixin
+@mixin flexRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flexColum {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flexColumReverse {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 
 // base styles
 html{
@@ -14,6 +34,8 @@ html{
     padding: 0px; 
     margin: 0px;
     scroll-behavior: smooth;
+    font-family: $primaryFont;
+    font-size: 0.875rem;//14px
     .wrapper{
         width: 90%;
         max-width: 480px;
@@ -33,6 +55,7 @@ html{
             list-style: none;
         }
     }
+    
 }
 
 

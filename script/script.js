@@ -1,3 +1,51 @@
+
+// hamburgerMenu
+const openMenu = function(){
+    let openInput = document.getElementById("openDD").checked;
+    const bar1 = document.getElementById("bar1");
+    const bar2 = document.getElementById("bar2");
+    const bar3 = document.getElementById("bar3");
+  
+  if(openInput === false){
+    
+    document.getElementById("openDD").checked = true;
+    
+    bar1.style.transform ="rotate(-45deg)";
+    bar1.style.top ="7px";
+    bar2.style.display ="none";
+    bar3.style.transform ="rotate(45deg)";
+    
+  }else{
+
+    document.getElementById("openDD").checked = false;
+    bar1.style.transform ="rotate(180deg)";
+    bar1.style.top ="0px";
+    bar2.style.display ="block";
+    bar3.style.transform ="rotate(180deg)";
+
+  }
+
+}
+
+const hamburgerMenu = document.getElementById('hamburgerMenu').addEventListener('click', function(){
+  
+  openMenu()
+
+
+});
+const closeBar = document.getElementById('closeBar').addEventListener('click', function(){
+  
+  openMenu()
+
+
+});
+
+
+
+
+
+
+
 // clear input on submit
 const clearInput = function () {
   document.getElementById('userInput').value = "";

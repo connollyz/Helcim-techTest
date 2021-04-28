@@ -1,1 +1,82 @@
 
+// header styles
+header{
+    background: linear-gradient(to bottom, $primaryColor , $secondaryColor);
+    border-radius: 0px 0px 25px 25px;
+    overflow: hidden;
+    .wrapper{
+        @include flexColum;   
+    }
+}
+// navbar styles
+.navBar{
+    @include flexRow; 
+    // menuIcon
+    .hamburgerMenu{
+        width: 30px;
+        .bar{
+            margin: 4px 0px;
+            height: 4px;
+            width: 100%;
+            border-radius: 2px;
+            background-color: $quaternaryColor;
+            position: relative;
+            transition:all 0.3s;
+        }
+    }
+    // mainLogo
+    .logo{
+        width: 80px;
+    }
+    // userIcon
+    .user i{
+        color: $quaternaryColor;
+        font-size: 1.5rem;//24px;
+    }
+}
+
+// dropDownMenu
+.menu{
+    height:0px;
+    overflow: hidden;
+    transition:all 0.3s;
+    // listItem
+  ul li{
+       transition: all 0.3s ease;
+    //ListItemLink
+        a{
+            width: 100%;
+            color:$quaternaryColor;
+            font-size: 1.2rem;//19.2px;
+            //ListItemIcon
+            i{
+                margin-right: 20px;
+            }
+            //ListItemWrapper
+            .wrapper{
+                @include flexRow;
+                justify-content: flex-start;
+            }
+        }
+        &:hover{
+            background: rgba(242, 242, 242, 0.1);  
+        }  
+    }
+    .closeBar{
+         margin: 10px auto;
+         height: 4px;
+         width: 30px;
+         border-radius: 2px;
+         background-color: $quaternaryColor;
+    }
+        
+}
+.openDD{
+    visibility: hidden;
+    position: absolute;
+    top: 10000000;
+}
+
+#openDD:checked + .menu{  
+     height: 320px;  
+}
