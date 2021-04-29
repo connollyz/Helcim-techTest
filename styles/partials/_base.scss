@@ -27,6 +27,12 @@ $quaternaryColor: #F2F2F2;
   flex-direction: column-reverse;
 }
 
+@mixin hideItem {
+   position: absolute;
+   visibility: hidden;
+   top: 10000;
+}
+
 
 // base styles
 html{
@@ -36,6 +42,10 @@ html{
     scroll-behavior: smooth;
     font-family: $primaryFont;
     font-size: 0.875rem;//14px
+    body{
+      min-height: 100vh;
+      position: relative;
+    }
     .wrapper{
         width: 90%;
         max-width: 480px;

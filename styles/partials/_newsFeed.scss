@@ -1,0 +1,7 @@
+.newsFeed{
+    padding-top: 80px;
+    padding-bottom: 135px;
+    @include flexColumReverse;
+    min-height: 100vh;
+    justify-content: flex-end;
+}

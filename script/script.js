@@ -33,11 +33,9 @@ const hamburgerMenu = document.getElementById('hamburgerMenu').addEventListener(
 
 
 });
+
 const closeBar = document.getElementById('closeBar').addEventListener('click', function(){
-  
   openMenu()
-
-
 });
 
 
@@ -61,6 +59,9 @@ const clearInput = function () {
     const newFile = new FileReader();
     newFile.onload = function(){
       const previewDisplay = document.getElementById('previewDisplay');
+      const removeImgBtn = document.getElementById('close');
+      previewDisplay.style.display="block"
+      removeImgBtn.style.display="block"
       previewDisplay.src = newFile.result;
     }
     newFile.readAsDataURL(event.target.files[0]);
@@ -68,12 +69,43 @@ const clearInput = function () {
   
 
   const removeImg = document.getElementById('close').addEventListener("click", function(){
+  
           const previewDisplay = document.getElementById('previewDisplay');
-                previewDisplay.src =" ";
+          const removeImgBtn = document.getElementById('close');
 
+                previewDisplay.src =" ";
+                removeImgBtn.style.display="none";
+                previewDisplay.style.display="none";
+              
                 const newImg = document.getElementById('newImg');
                 newImg.value = "";
       })
+
+
+
+const postLayout = function(){
+  let postBoxLayout = document.getElementById("postBoxLayout").checked;
+  if(postBoxLayout === false){ 
+    document.getElementById("postBoxLayout").checked = true;
+  }else{
+    document.getElementById("postBoxLayout").checked = false;
+  }
+
+}
+
+
+const postTextLayout = document.getElementById('postText').addEventListener('click', function(){
+  postLayout()
+});
+
+const exitLayout = document.getElementById('news').addEventListener('click', function(){
+  document.getElementById("postBoxLayout").checked = false;
+});
+
+
+
+
+
 
 
 
@@ -86,7 +118,7 @@ const post = document.getElementById('post').addEventListener('click', function(
   
  //userAccountInfo
   const userName = "John Doe"
-  const userProfileImg="assets/userIcon.svg"
+  const userProfileImg="../assets/tofan-teodor-ProfilePhoto.jpg"
   //imgInput
   const newImg = document.getElementById('newImg');
   const imgSrc = document.getElementById("previewDisplay").src
@@ -123,8 +155,10 @@ const post = document.getElementById('post').addEventListener('click', function(
   newDate.innerHTML = `<p>${months[m]}-${d}-${y}</p>`;
   newTextPost.innerHTML = `<p>${userTextInput}</p>`;
   
-
-
+ 
+  
+                    
+                    
   
   
   //Append Child Element to newCard
@@ -134,20 +168,35 @@ const post = document.getElementById('post').addEventListener('click', function(
   newCard.appendChild(newDate); //Date
   newCard.appendChild(newTextPost);//Text
 
-  //Append New Card to Newsfeed
-  document.getElementById('news').appendChild(newCard);
+    // close err
+
 
 //  err handling
   if(userTextInput === "" && newImg.value === ""){
     //alert user of err (cant post if there is no content).
-    alert("err");
+    alert("Please add message and or Image to post.")
+  
+
     // cancel post
     document.getElementById('news').removeChild(newCard);
-  }else if ( newImg.value  === ""){
- newCard.removeChild(cardImg);//Img
+  }else if( newImg.value  === ""){
+      newCard.removeChild(cardImg);//Img
   }
+     //Append New Card to Newsfeed
+    document.getElementById('news').appendChild(newCard);
+  
+
+  const removeImgBtn = document.getElementById('close');
+  removeImgBtn.style.display='none'
+
+ 
+ 
+
   //Clear Input
   clearInput();
-
+  postLayout();
     
-    });
+  });
+
+ 
+

@@ -131,6 +131,9 @@ html {
   scroll-behavior: smooth;
   font-family: "Open Sans", Sans-Serif;
   font-size: 0.875rem; }
+  html body {
+    min-height: 100vh;
+    position: relative; }
   html .wrapper {
     width: 90%;
     max-width: 480px;
@@ -147,6 +150,8 @@ html {
       list-style: none; }
 
 header {
+  position: fixed;
+  width: 100%;
   background: -webkit-gradient(linear, left top, left bottom, from(#4766F7), to(#3C9AFA));
   background: -webkit-linear-gradient(top, #4766F7, #3C9AFA);
   background: -o-linear-gradient(top, #4766F7, #3C9AFA);
@@ -161,6 +166,12 @@ header {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column; }
+  header .openDD {
+    position: absolute;
+    visibility: hidden;
+    top: 10000; }
+  header #openDD:checked + .menu {
+    height: 320px; }
 
 .navBar {
   display: -webkit-box;
@@ -190,9 +201,11 @@ header {
       transition: all 0.3s; }
   .navBar .logo {
     width: 80px; }
-  .navBar .user i {
-    color: #F2F2F2;
-    font-size: 1.5rem; }
+  .navBar .user {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    overflow: hidden; }
 
 .menu {
   height: 0px;
@@ -201,9 +214,12 @@ header {
   -o-transition: all 0.3s;
   transition: all 0.3s; }
   .menu ul li {
+    border-top: 0.5px solid rgba(242, 242, 242, 0.3);
     -webkit-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     transition: all 0.3s ease; }
+    .menu ul li:first-child {
+      border-top: 2px solid rgba(242, 242, 242, 0.3); }
     .menu ul li a {
       width: 100%;
       color: #F2F2F2;
@@ -236,13 +252,12 @@ header {
     border-radius: 2px;
     background-color: #F2F2F2; }
 
-.openDD {
-  visibility: hidden;
-  position: absolute;
-  top: 10000000; }
-
-#openDD:checked + .menu {
-  height: 320px; }
+.createPost {
+  background-color: #F2F2F2;
+  padding: 10px 0px;
+  position: fixed;
+  bottom: 0;
+  width: 100%; }
 
 form {
   display: -webkit-box;
@@ -252,22 +267,78 @@ form {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
-  form fieldset {
-    border: none;
-    margin: 0px;
-    padding: 0px; }
-  form .postImgPreview {
-    width: 100%; }
-  form label {
-    visibility: hidden;
+  flex-wrap: wrap;
+  padding: 0px 10px 10px;
+  margin: 10px 0px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  overflow: hidden; }
+  form .postBoxLayout {
     position: absolute;
-    top: 1000000; }
+    visibility: hidden;
+    top: 10000; }
+  form input#postBoxLayout:checked ~ .postText {
+    width: 100%;
+    min-height: 30px; }
+  form input#postBoxLayout:checked ~ .postBtns {
+    width: 100%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 10px; }
+  form fieldset {
+    padding: 0px;
+    margin: 0px;
+    border: none; }
+  form .postImgPreview {
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    margin-top: 10px; }
+    form .postImgPreview .close {
+      display: none;
+      position: absolute;
+      top: 5px;
+      right: 8px;
+      color: #4766F7;
+      -webkit-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+      form .postImgPreview .close:hover {
+        opacity: 0.3; }
   form .postText {
-    width: 60%; }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    margin-top: 10px; }
+    form .postText .userInputLabel {
+      position: absolute;
+      visibility: hidden;
+      top: 10000; }
+    form .postText textarea {
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      resize: none;
+      font-size: 0.8rem;
+      color: #1F1C20;
+      border: none; }
   form .postBtns {
-    width: 40%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -275,17 +346,146 @@ form {
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center; }
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    font-family: "Ubuntu", Sans-Serif;
+    color: #1F1C20; }
     form .postBtns button {
-      -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-      flex-grow: 1;
-      padding: 0px;
-      margin: 0px;
+      color: #4766F7;
+      background-color: #ffffff;
+      border: none; }
+    form .postBtns label img {
+      fill: #4766F7; }
+  form .newImgInput {
+    position: absolute;
+    visibility: hidden;
+    top: 10000; }
+
+.newsFeed {
+  padding-top: 80px;
+  padding-bottom: 135px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  min-height: 100vh;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end; }
+
+.card {
+  border-bottom: 2px solid #CDD7EC;
+  padding-bottom: 20px;
+  margin-bottom: 20px; }
+  .card .author {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start; }
+    .card .author .authorProfileImg {
+      width: 20px;
+      height: 20px;
+      overflow: hidden;
+      border-radius: 100%;
+      margin-right: 10px; }
+    .card .author h2 {
+      font-size: 1rem;
+      font-family: "Ubuntu", Sans-Serif; }
+  .card .postImg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+    margin-bottom: 5px; }
+  .card .date, .card .date p {
+    font-size: 0.8rem;
+    color: #bfbec0;
+    margin: 0px; }
+  .card .date {
+    margin-bottom: 5px; }
+  .card .newTextPost {
+    font-size: 0.8rem;
+    color: #1F1C20;
+    margin-top: 3px; }
+    .card .newTextPost a {
+      color: #4766F7; }
+  .card p {
+    margin: 0px; }
+
+.errMessage {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(71, 102, 247, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  display: none; }
+  .errMessage .failMessageContainer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    color: #F2F2F2; }
+    .errMessage .failMessageContainer .failImg {
+      width: 100px;
+      margin-bottom: 10px; }
+    .errMessage .failMessageContainer h2, .errMessage .failMessageContainer p {
+      margin: 5px 0px; }
+    .errMessage .failMessageContainer .failBtn {
+      margin-top: 20px;
+      background-color: #4766F7;
+      color: #F2F2F2;
+      font-family: "Ubuntu", Sans-Serif;
+      padding: 10px 20px;
       border: none;
-      background: 0px; }
-    form .postBtns .addImg img {
-      margin: 0 auto;
-      max-width: 40px; }
+      border-radius: 5px; }

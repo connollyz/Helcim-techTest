@@ -1,0 +1,90 @@
+.createPost{
+    background-color: $quaternaryColor;
+    padding: 10px 0px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;    
+}
+
+form{
+    @include flexRow;
+    flex-wrap: wrap;
+    padding: 0px 10px 10px;
+    margin: 10px 0px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    // add/remove styles
+    .postBoxLayout{
+        @include hideItem;
+    }
+    input#postBoxLayout:checked ~ .postText{
+        width: 100%;
+        min-height: 30px;
+    }
+    input#postBoxLayout:checked ~ .postBtns{
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    fieldset{
+        padding: 0px;
+        margin: 0px;
+        border: none;
+    }
+    .postImgPreview{
+        border-radius: 5px;
+        overflow: hidden;
+        width: 100%;
+        position: relative;
+        margin-top: 10px;
+        .close{
+            display: none;
+            position: absolute;
+            top: 5px;
+            right: 8px;
+            color: $primaryColor;
+            transition: all 0.3s ease;
+            &:hover{
+                opacity: 0.3;
+            }
+        }
+    }
+    .postText{
+        @include flexColum;
+        flex-grow: 1;
+        margin-top: 10px;
+        .userInputLabel{
+            @include hideItem
+        }
+        textarea{
+           flex-grow: 1;
+           resize: none;
+           font-size: 0.8rem;
+           color: $tertiaryColor; 
+           border: none;
+           
+        }
+
+    }
+    .postBtns{
+        @include flexRow;
+        justify-content: flex-end;
+        font-family: $secondaryFont;
+        color: $tertiaryColor;
+        button{
+            color: $primaryColor;
+            background-color: #ffffff;
+            border: none;
+        }
+        label img{
+            fill: $primaryColor;
+        }
+    }
+    .newImgInput{
+        @include hideItem
+    }
+
+    
+}

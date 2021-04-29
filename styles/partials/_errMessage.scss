@@ -1,0 +1,43 @@
+// <div class="wrapper failMessageContainer">
+//                           <div class="failImg">
+//                             <img src="../assets/Fail.svg">
+//                           </div>
+//                           <h2>Failed to post.</h2>
+//                           <p>Please add message and or Image to post.</p>
+//                           <button id="gotIt" class="failBtn">Got it!</button>
+//                       </div>
+
+.errMessage{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(71, 102, 247, 0.3);
+    @include flexColum;
+    justify-content: center;
+    display: none;
+    .failMessageContainer{
+        @include flexColum;
+        align-items: center;
+        text-align: center;
+        color: $quaternaryColor;
+        .failImg{
+            width: 100px;
+            margin-bottom: 10px;
+        }
+        h2, p{
+            margin: 5px 0px;
+        }
+        .failBtn{
+            margin-top: 20px;
+            background-color: $primaryColor;
+            color: $quaternaryColor;
+            font-family: $secondaryFont;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+        }
+
+    }
+}

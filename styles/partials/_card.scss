@@ -1,0 +1,50 @@
+.card{
+    border-bottom: 2px solid #CDD7EC;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    .author{
+        @include flexRow;
+        justify-content: flex-start;
+        .authorProfileImg{
+            width: 20px;
+            height: 20px;
+            overflow: hidden;
+            border-radius: 100%;
+            margin-right: 10px;
+        }
+        h2{
+            font-size: 1rem;//16px
+            font-family: $secondaryFont;
+        }
+    }
+    .postImg{
+        @include flexColum;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        border-radius: 5px;
+        margin-bottom: 5px; 
+    }
+    .date, .date p{
+        font-size: 0.8rem;
+        color: #bfbec0;
+        margin: 0px; 
+    }
+    .date{
+        margin-bottom: 5px;
+    }
+    .newTextPost{
+        font-size: 0.8rem;
+        color: $tertiaryColor;
+        margin-top: 3px;
+        a{
+            color: $primaryColor;
+        }   
+    }
+    p{
+        margin: 0px;
+    }
+}
+
+
+ 

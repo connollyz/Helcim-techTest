@@ -1,13 +1,24 @@
 
 // header styles
 header{
+    position: fixed;
+    width: 100%;
     background: linear-gradient(to bottom, $primaryColor , $secondaryColor);
     border-radius: 0px 0px 25px 25px;
     overflow: hidden;
     .wrapper{
         @include flexColum;   
     }
+    .openDD{
+        @include hideItem
+    }
+
+    #openDD:checked + .menu{  
+        height: 320px;  
+    }
 }
+
+
 // navbar styles
 .navBar{
     @include flexRow; 
@@ -29,9 +40,11 @@ header{
         width: 80px;
     }
     // userIcon
-    .user i{
-        color: $quaternaryColor;
-        font-size: 1.5rem;//24px;
+    .user{
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        overflow: hidden;
     }
 }
 
@@ -42,7 +55,11 @@ header{
     transition:all 0.3s;
     // listItem
   ul li{
+       border-top: .5px solid rgba(242,242,242,0.3);
        transition: all 0.3s ease;
+       &:first-child{
+           border-top: 2px solid rgba(242,242,242,0.3);
+       }
     //ListItemLink
         a{
             width: 100%;
@@ -56,6 +73,7 @@ header{
             .wrapper{
                 @include flexRow;
                 justify-content: flex-start;
+                
             }
         }
         &:hover{
@@ -71,12 +89,4 @@ header{
     }
         
 }
-.openDD{
-    visibility: hidden;
-    position: absolute;
-    top: 10000000;
-}
 
-#openDD:checked + .menu{  
-     height: 320px;  
-}
