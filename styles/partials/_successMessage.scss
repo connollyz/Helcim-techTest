@@ -1,0 +1,16 @@
+.posted{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $primaryColor;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 105px;
+    p{
+        text-align: center;
+        color: $quaternaryColor;
+        font-family: $secondaryFont;
+    }
+}

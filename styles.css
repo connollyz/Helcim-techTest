@@ -369,7 +369,7 @@ form {
     top: 10000; }
 
 .newsFeed {
-  padding-top: 80px;
+  padding-top: 100px;
   padding-bottom: 135px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -451,7 +451,7 @@ form {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(71, 102, 247, 0.3);
+  background-color: rgba(71, 102, 247, 0.6);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -489,3 +489,22 @@ form {
       padding: 10px 20px;
       border: none;
       border-radius: 5px; }
+
+.posted {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #4766F7;
+  display: none;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 105px; }
+  .posted p {
+    text-align: center;
+    color: #F2F2F2;
+    font-family: "Ubuntu", Sans-Serif; }
