@@ -41,14 +41,17 @@
                     <img src="assets/tofan-teodor-ProfilePhoto.jpg" alt="John Doe">
                 </a>
             </div>
+            <!-- end of navBar -->
         </div>
       
-        <!-- navMenu -->
+        <!-- navMenuCheckbox -->
         <input class="openDD" id="openDD" type="checkbox">
+
+        <!-- dropDown navMenu -->
         <nav id="menu" class="menu">
-            <!-- list -->
+            <!-- dropdown list -->
             <ul>
-                <!-- list items -->
+                <!-- Profile -->
                 <li> 
                     <!-- itemLink -->
                     <a href="#">
@@ -60,6 +63,7 @@
                         </div>
                     </a>
                 </li>
+                <!-- Settings & Privacy -->
                 <li> 
                     <!-- itemLink -->
                     <a href="#">
@@ -71,8 +75,8 @@
                         </div>
                     </a>
                 </li>
+                <!-- Logout -->
                 <li> 
-                    
                     <!-- itemLink -->
                     <a href="#">
                         <div class="wrapper">
@@ -83,6 +87,7 @@
                         </div>
                     </a>
                 </li>
+                <!-- Terms & Conditions -->
                 <li> 
                     
                     <!-- itemLink -->
@@ -95,6 +100,7 @@
                         </div>
                     </a>
                 </li>
+                <!-- Help & Support -->
                 <li> 
                     <!-- itemLink -->
                     <a  href="#">
@@ -107,8 +113,12 @@
                     </a>
                 </li>
             </ul>
+            <!-- end of dropdown list -->
+
+            <!-- Close dropdown nav -->
             <div id="closeBar"class="closeBar"></div>
         </nav>
+        <!-- end of dropdown menu -->
         
     </header>
     <!-- //headerEnds -->
@@ -116,7 +126,7 @@
     <!-- mainContent (news feed) -->
     <main>
         <div id="news" class="wrapper newsFeed">
-            <!-- post populate in here -->
+            <!-- posts populate in here -->
         </div>
     </main>
     <!-- //mainContentEnds -->
@@ -159,22 +169,30 @@
     <!-- errMessage -->
     <div id="errMessage" class="errMessage">
         <div class="wrapper failMessageContainer">
+            <!-- failImg -->
             <div class="failImg">
                 <img src="assets/Fail.svg">
             </div>
+            <!-- fail post message -->
             <h2>Failed to post.</h2>
             <p>Please add message and or Image to post.</p>
-            <button onclick="closeErr()" id="gotIt" class="failBtn">Got it!</button>
+            <!-- close fail message -->
+            <button id="gotIt" class="failBtn">Got it!</button>
         </div>
     </div>
+    <!-- //errMessageEnds -->
 
+    <!-- successMessage -->
     <div id="success" class="posted">
         <div class="wrapper">
             <p>your post was a success!</p>
         </div>
     </div>
+    <!-- //successMessageEnds -->
 
     <!-- Script -->
     <script src="script/script.js"></script>
+
+    <!-- Created By Zoe Connolly 2021 -->
 </body>
 </html>

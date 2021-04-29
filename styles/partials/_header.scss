@@ -1,3 +1,5 @@
+// Header navBar Styles
+
 
 // header styles
 header{
@@ -12,7 +14,6 @@ header{
     .openDD{
         @include hideItem
     }
-
     #openDD:checked + .menu{  
         height: 320px;  
     }
@@ -80,6 +81,7 @@ header{
             background: rgba(242, 242, 242, 0.1);  
         }  
     }
+    // close dropDown Menu Icon
     .closeBar{
          margin: 10px auto;
          height: 4px;

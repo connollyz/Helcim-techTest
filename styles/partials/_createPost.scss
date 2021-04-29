@@ -1,3 +1,6 @@
+// Create Post Styles
+
+// Create Post Element
 .createPost{
     background-color: $quaternaryColor;
     padding: 10px 0px;
@@ -6,6 +9,7 @@
     width: 100%;    
 }
 
+// Post form styles
 form{
     @include flexRow;
     flex-wrap: wrap;
@@ -14,7 +18,8 @@ form{
     background-color: #ffffff;
     border-radius: 5px;
     overflow: hidden;
-    // add/remove styles
+
+    // add/remove layout styles based on checkbox checked
     .postBoxLayout{
         @include hideItem;
     }
@@ -28,11 +33,14 @@ form{
         margin-top: 10px;
     }
 
+    //All fieldsets
     fieldset{
         padding: 0px;
         margin: 0px;
         border: none;
     }
+
+    // Preview Img
     .postImgPreview{
         border-radius: 5px;
         overflow: hidden;
@@ -51,6 +59,8 @@ form{
             }
         }
     }
+
+    //Text box
     .postText{
         @include flexColum;
         flex-grow: 1;
@@ -63,11 +73,10 @@ form{
            resize: none;
            font-size: 0.8rem;
            color: $tertiaryColor; 
-           border: none;
-           
+           border: none;  
         }
-
     }
+    // PostBtns to add img and or submit post
     .postBtns{
         @include flexRow;
         justify-content: flex-end;
